@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/margin_medium">
+
+        <ImageView
+            android:id="@+id/iv_movie_item"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/itsokaytonotbeokay"
+            tools:srcCompat="@drawable/itsokaytonotbeokay" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/color_white"
+            android:textSize="40dp"
+            app:srcCompat="@drawable/ic_baseline_play_circle_filled_24" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+
+        <TextView
+            android:id="@+id/top_mvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:text="Passengers"
+            android:textColor="@color/color_white"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/top_release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Passengers"
+            android:textColor="@color/color_white"
+            android:textSize="14sp"
+            android:layout_below="@+id/top_mvname"/>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+    <!-- <ImageView
+         android:id="@+id/iv_movie_item"
+         android:layout_width="match_parent"
+         android:layout_height="150dp"
+         android:contentDescription="@string/app_name"
+         android:scaleType="centerCrop"
+         app:srcCompat="@drawable/itsokaytonotbeokay"
+         tools:srcCompat="@drawable/itsokaytonotbeokay"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"/>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:id="@+id/movie_poster_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/itsokaytonotbeokay" />
+
+            <include
+                android:id="@+id/includebar"
+                layout="@layout/detail_action_bar" />
+
+            <include layout="@layout/movie_review_layout"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_height="90dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/movietitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="The Movie Title"
+            android:textColor="@color/color_white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <include layout="@layout/movie_fave_layout" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Story Line"
+            android:textColor="@color/color_white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="The Movie Descirption"
+            android:textColor="@color/color_white"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rounded_yellow_color"
+                android:drawableLeft="@drawable/ic_baseline_play_arrow_24"
+                android:padding="8dp"
+                android:text="PLAY TRAILER"
+                android:textColor="@color/color_white" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_outline_rounded_white"
+                android:drawableLeft="@drawable/ic_baseline_star_24"
+                android:padding="8dp"
+                android:text="RATE MOVIE"
+                android:textColor="@color/color_white" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Actors"
+            android:textColor="@color/text_light_blue"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cast_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <include layout="@layout/about_film" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Creators"
+                android:textColor="@color/text_light_blue"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="More Creators"
+                android:textColor="@color/color_white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/crew_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

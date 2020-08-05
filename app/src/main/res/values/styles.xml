@@ -1,0 +1,21 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#232E40</item>
+        <item name="colorPrimaryDark">#3E5478</item>
+        <item name="colorAccent">#344868</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/color_yellow</item>
+        <item name="colorControlActivated">@color/color_yellow</item>
+    </style>
+
+</resources>
