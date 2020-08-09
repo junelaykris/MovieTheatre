@@ -22,7 +22,7 @@ const val PARAM_API_KEY = "api_key"
 
 
 const val PARAM_CREDITS = "credits"
-const val PARAM_API_KEY_VALUE = "5d6710167959a4b4b762a3f3821e6495"
+/*const val PARAM_API_KEY_VALUE = "5d6710167959a4b4b762a3f3821e6495"*/
 const val MOVIE_PATH = "https://image.tmdb.org/t/p/w1280/"
 
 

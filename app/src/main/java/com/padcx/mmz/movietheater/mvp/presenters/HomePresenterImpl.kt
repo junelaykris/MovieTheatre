@@ -7,6 +7,7 @@ import com.padcx.mmz.movietheater.data.models.MoviesModel
 import com.padcx.mmz.movietheater.data.models.impls.MoviesModelImpls
 import com.padcx.mmz.movietheater.data.vos.*
 import com.padcx.mmz.movietheater.mvp.views.HomeView
+import com.padcx.mmz.shared.AbstractBasePresenter
 
 /**
  * Created by Myint Myint Zaw on 8/1/2020.
@@ -18,11 +19,14 @@ class HomePresenterImpl : HomePresenter, AbstractBasePresenter<HomeView>() {
 
     override fun onUiReady(lifecycleOwner: LifecycleOwner) {
         loadAllMoviesFromAPI()
+        loadAllNowPlayingFromApi()
 
-        mMoviesModel.getAllNowPlayingList(onError = {
+        /*mMoviesModel.getAllNowPlayingList(onError = {
         }).observe(lifecycleOwner, Observer {
             mView?.displayNowplayingItems(it)
         })
+
+*/
 
         mMoviesModel.getAllPopularMovies(onError = {
         }).observe(lifecycleOwner, Observer {
@@ -95,6 +99,15 @@ class HomePresenterImpl : HomePresenter, AbstractBasePresenter<HomeView>() {
         mView?.navigateToDetail(entity.id)
     }
 
+    private fun loadAllNowPlayingFromApi() {
+        mMoviesModel.getAllNowplayingList(
+            onSuccess = {
+                mView?.displayNowplayingItems(it)
+            },
+            onError = {}
+        )
+    }
+
     private fun loadAllDiscoverListFromAPI(genreName: String) {
         mMoviesModel.getAllDiscoverListFromApiandSaveToDatabase(
             genericname = genreName,
@@ -104,6 +117,7 @@ class HomePresenterImpl : HomePresenter, AbstractBasePresenter<HomeView>() {
             onError = {}
         )
     }
+
 
     private fun loadAllMoviesFromAPI() {
         mMoviesModel.getAllMoviesFromApiAndSaveToDatabase(

@@ -5,10 +5,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.padcx.mmz.movietheater.R
 import com.padcx.mmz.movietheater.data.vos.ActorVO
-import com.padcx.mmz.movietheater.data.vos.DiscoverVO
 import com.padcx.mmz.movietheater.utils.MOVIE_PATH
+import com.padcx.mmz.shared.BaseViewHolder
 import kotlinx.android.synthetic.main.actor_list_item.view.*
-import kotlinx.android.synthetic.main.popular_films_serials_items.view.*
 
 /**
  * Created by Myint Myint Zaw on 8/2/2020.

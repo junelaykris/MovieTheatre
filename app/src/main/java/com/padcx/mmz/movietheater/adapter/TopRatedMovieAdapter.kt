@@ -7,6 +7,7 @@ import com.padcx.mmz.movietheater.data.vos.TopRateMovieVO
 import com.padcx.mmz.movietheater.delegate.PopularMovieListActionDelegate
 import com.padcx.mmz.movietheater.delegate.videoplaydelegate
 import com.padcx.mmz.movietheater.views.viewholders.ShowCaseViewHolder
+import com.padcx.mmz.shared.BaseRecyclerAdapter
 
 /**
  * Created by Myint Myint Zaw on 8/2/2020.

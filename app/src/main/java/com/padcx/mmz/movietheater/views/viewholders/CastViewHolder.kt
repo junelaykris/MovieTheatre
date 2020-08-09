@@ -8,6 +8,7 @@ import com.padcx.mmz.movietheater.data.vos.ActorVO
 import com.padcx.mmz.movietheater.data.vos.CastVO
 import com.padcx.mmz.movietheater.data.vos.DiscoverVO
 import com.padcx.mmz.movietheater.utils.MOVIE_PATH
+import com.padcx.mmz.shared.BaseViewHolder
 import kotlinx.android.synthetic.main.actor_list_item.view.*
 import kotlinx.android.synthetic.main.popular_films_serials_items.view.*
 

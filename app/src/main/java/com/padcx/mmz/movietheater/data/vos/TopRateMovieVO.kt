@@ -19,6 +19,9 @@ class TopRateMovieVO(
     @SerializedName("release_date")  val release_date: String,
     @SerializedName("title") val title: String,
     @SerializedName("vote_average") val vote_average: Double,
-    @SerializedName("vote_count") val vote_count: Int
+    @SerializedName("vote_count") val vote_count: Int,
+
+    var toprate: Int = 0,
+    var nowplaying: Int = 0
 ) {
 }

@@ -2,9 +2,9 @@ package com.padcx.mmz.movietheater.activities
 
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.padcx.mmz.movietheater.BuildConfig
 import com.padcx.mmz.movietheater.R
 import com.padcx.mmz.movietheater.adapter.*
 import com.padcx.mmz.movietheater.data.vos.*
@@ -12,6 +12,7 @@ import com.padcx.mmz.movietheater.delegate.videoplaydelegate
 import com.padcx.mmz.movietheater.mvp.presenters.HomePresenter
 import com.padcx.mmz.movietheater.mvp.presenters.HomePresenterImpl
 import com.padcx.mmz.movietheater.mvp.views.HomeView
+import com.padcx.mmz.shared.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -38,21 +39,9 @@ class MainActivity : BaseActivity(), HomeView, videoplaydelegate {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         setUpPresenter()
         setUpRecyclerView()
-        //setUpUI()
         homePresenter.onUiReady(this)
-    }
-
-    private fun setUpUI() {
-        /*  vpImageList.add(MovieImage(movieImg = R.drawable.wolverine))
-          vpImageList.add(MovieImage(movieImg = R.drawable.wolverine))
-          vpImageList.add(MovieImage(movieImg = R.drawable.wolverine))
-
-          showBanner(vpImageList)
-          movieItemShowTimer()*/
-
     }
 
     private fun movieItemShowTimer() {
@@ -72,10 +61,6 @@ class MainActivity : BaseActivity(), HomeView, videoplaydelegate {
                 handler.post(update)
             }
         }, firstDelayMinute, delayIntervalMinute)
-
-    }
-
-    private fun showBanner(vpImageList: MutableList<TopRateMovieVO>) {
 
     }
 
@@ -123,7 +108,6 @@ class MainActivity : BaseActivity(), HomeView, videoplaydelegate {
     }
 
     override fun navigateToDetail(id: Int) {
-        // startActivity(VideoPlayerDetailActivity.newIntents(this))
         startActivity(MovieDetailActivity.newItent(this, id))
     }
 
@@ -131,8 +115,8 @@ class MainActivity : BaseActivity(), HomeView, videoplaydelegate {
         movieViewPagerAdapter = MovieItemViewPagerAdapter(this, showcaseList.toMutableList(), this)
         vp_movie_item.adapter = movieViewPagerAdapter
         tl_movie_item.setupWithViewPager(vp_movie_item)
-        showBanner(showcaseList.toMutableList())
-        movieItemShowTimer()
+       // showBanner(showcaseList.toMutableList())
+      //  movieItemShowTimer()
     }
 
     private fun setUpRecyclerView() {

@@ -2,6 +2,25 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'me.moallemi.advanced-build-version'
+
+advancedVersioning {
+    nameOptions {
+        versionMajor 0
+        versionMinor 0
+        versionPatch 1
+    }
+    codeOptions {
+        versionCodeType 'AUTO_INCREMENT_ONE_STEP'
+    }
+    outputOptions {
+        renameOutput true
+        nameFormat 'MovieTheater-${versionName}'
+    }
+}
+
+def appVersionName = advancedVersioning.versionName
+def appVersionCode = advancedVersioning.versionCode
 
 android {
     compileSdkVersion 30
@@ -11,18 +30,54 @@ android {
         applicationId "com.padcx.mmz.movietheater"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode appVersionCode
+        versionName appVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String","MY_ACCOUNT","\"${verySensitiveData}\""
+
+        buildConfigField "String","MOVIE_APIKEY","\"${verySensitiveData}\""
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+           /* resourceShrinking true*/
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors{
+        flavorDimensions "appModule"
+        def BASE_URL_FIELD="BASE_URL_FIELD"
+        def BASE_DEV_URL="\"https://dev.padcmyanmar.com\""
+        def BASE_PROD_URL="\"https://padcmyanmar.com\""
+        def BASE_STAGING_URL="\"https://staging.padcmyanmar.com\""
+
+        dev{
+            dimension "appModule"
+            applicationIdSuffix=".dev"
+            manifestPlaceholders=[appName:"@string/app_name_dev"]
+            buildConfigField 'String',BASE_URL_FIELD,BASE_DEV_URL
+        }
+
+        prod{
+            dimension "appModule"
+            applicationIdSuffix=".prod"
+            manifestPlaceholders=[appName:"@string/app_name_prod"]
+            buildConfigField 'String',BASE_URL_FIELD,BASE_PROD_URL
+        }
+
+        staging{
+            dimension "appModule"
+            applicationIdSuffix=".staging"
+            manifestPlaceholders=[appName:"@string/app_name_staging"]
+            buildConfigField 'String',BASE_URL_FIELD,BASE_STAGING_URL
+        }
+    }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -31,6 +86,7 @@ android {
 }
 
 dependencies {
+    implementation project(":shared")
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.1'
@@ -39,13 +95,26 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.google.android.material:material:1.2.0-alpha04'
+
+    implementation rootProject.ext.libraries.material
 
     //GSON
-    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation rootProject.ext.libraries.gson
+
+    //Glide
+    implementation rootProject.ext.libraries.glide
+    kapt rootProject.ext.libraries.glidecompiler
+
+    //OKHttp
+    implementation rootProject.ext.libraries.okhttp
+
+    //Swipe Refresh Layout
+    implementation rootProject.ext.libraries.swipeRefresh
+
+
 
     //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation  rootProject.ext.libraries.retrofit
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
 
@@ -53,14 +122,6 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
-    //OKHttp
-    implementation "com.squareup.okhttp3:okhttp:4.1.0"
-
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-
-    //Swipe Refresh Layout
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
     def lifecycle_version = "2.2.0"
     def room_version = "2.2.3"
@@ -83,11 +144,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-
-    //Glide
-    implementation 'com.github.bumptech.glide:glide:4.10.0'
-    kapt 'com.github.bumptech.glide:compiler:4.10.0'
 
 
     // Local Unit Tests

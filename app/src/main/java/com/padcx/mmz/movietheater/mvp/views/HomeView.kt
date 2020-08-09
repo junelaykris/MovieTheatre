@@ -1,6 +1,7 @@
 package com.padcx.mmz.movietheater.mvp.views
 
 import com.padcx.mmz.movietheater.data.vos.*
+import com.padcx.mmz.shared.BaseView
 
 /**
  * Created by Myint Myint Zaw on 8/1/2020.

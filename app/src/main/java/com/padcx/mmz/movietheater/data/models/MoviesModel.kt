@@ -24,16 +24,20 @@ interface MoviesModel {
     fun getMovieDetailById(movieId: Int,onError: (String) -> Unit) : LiveData<MovieDetailVO>
 
 
-    fun getAllNowPlayingList(onError: (String) -> Unit) : LiveData<List<TopRateMovieVO>>
+  /*  fun getAllNowPlayingList(onError: (String) -> Unit) : LiveData<List<TopRateMovieVO>>*/
 
     fun getVideoIdByMovieId(movieId: Int,onSuccess: (List<VideoVO>) -> Unit,onError: (String) -> Unit)
 
 
-   /* fun getAllCrewAndCastFromApiAndSaveToDatabase(movieId: Int,onSuccess: () -> Unit, onError: (String) -> Unit)
+    fun getAllNowplayingList(onSuccess: (List<TopRateMovieVO>) -> Unit, onError: (String) -> Unit)
 
-    fun getAllCrewList(onError: (String) -> Unit) : LiveData<List<CreaterVO>>
-    fun getAllCastList(onError: (String) -> Unit) : LiveData<List<CastVO>>
-*/
+
+
+    /* fun getAllCrewAndCastFromApiAndSaveToDatabase(movieId: Int,onSuccess: () -> Unit, onError: (String) -> Unit)
+
+     fun getAllCrewList(onError: (String) -> Unit) : LiveData<List<CreaterVO>>
+     fun getAllCastList(onError: (String) -> Unit) : LiveData<List<CastVO>>
+ */
 
 
 

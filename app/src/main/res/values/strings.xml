@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">MovieTheater</string>
+
+    <string name="app_name_dev">MovieTheater(Dev)</string>
+    <string name="app_name_prod">MovieTheater</string>
+    <string name="app_name_staging">MovieTheater(Staging)(</string>
+
     <string name="title_films">Best Popular Films And Serials</string>
     <string name="sample_movie">It\'s okay to not be Okay</string>
     <string name="tv_seemore"><u>See More</u></string>

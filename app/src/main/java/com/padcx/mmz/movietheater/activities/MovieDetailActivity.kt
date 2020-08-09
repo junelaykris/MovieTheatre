@@ -2,7 +2,6 @@ package com.padcx.mmz.movietheater.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import android.util.Log
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,17 +17,10 @@ import com.padcx.mmz.movietheater.mvp.presenters.DetailPresenter
 import com.padcx.mmz.movietheater.mvp.presenters.DetailPresenterImpl
 import com.padcx.mmz.movietheater.mvp.views.MovieDetailView
 import com.padcx.mmz.movietheater.utils.MOVIE_PATH
+import com.padcx.mmz.shared.BaseActivity
 import kotlinx.android.synthetic.main.about_film.*
 import kotlinx.android.synthetic.main.detail_action_bar.*
-import kotlinx.android.synthetic.main.detail_action_bar.view.*
-import kotlinx.android.synthetic.main.main_custom_actionbar.view.*
-import kotlinx.android.synthetic.main.movie_detail.*
 import kotlinx.android.synthetic.main.movie_detail_activity.*
-import kotlinx.android.synthetic.main.movie_detail_activity.cast_recyclerview
-import kotlinx.android.synthetic.main.movie_detail_activity.crew_recyclerview
-import kotlinx.android.synthetic.main.movie_detail_activity.movie_poster_image
-import kotlinx.android.synthetic.main.movie_detail_activity.movietitle
-import kotlinx.android.synthetic.main.movie_detail_activity.overview
 
 /**
  * Created by Myint Myint Zaw on 8/2/2020.

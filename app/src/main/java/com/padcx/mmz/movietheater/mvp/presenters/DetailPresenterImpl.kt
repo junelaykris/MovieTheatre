@@ -6,6 +6,7 @@ import com.padcx.mmz.movietheater.data.models.MoviesModel
 import com.padcx.mmz.movietheater.data.models.impls.MoviesModelImpls
 import com.padcx.mmz.movietheater.mvp.views.HomeView
 import com.padcx.mmz.movietheater.mvp.views.MovieDetailView
+import com.padcx.mmz.shared.AbstractBasePresenter
 
 /**
  * Created by Myint Myint Zaw on 8/1/2020.

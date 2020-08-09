@@ -6,6 +6,7 @@ import com.padcx.mmz.movietheater.R
 import com.padcx.mmz.movietheater.data.vos.PopularMovieVO
 import com.padcx.mmz.movietheater.delegate.PopularMovieListActionDelegate
 import com.padcx.mmz.movietheater.views.viewholders.PopularMovieViewHolder
+import com.padcx.mmz.shared.BaseRecyclerAdapter
 
 /**
  * Created by Myint Myint Zaw on 8/1/2020.

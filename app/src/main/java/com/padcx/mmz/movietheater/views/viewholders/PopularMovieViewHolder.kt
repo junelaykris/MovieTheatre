@@ -5,6 +5,7 @@ import com.bumptech.glide.Glide
 import com.padcx.mmz.movietheater.data.vos.PopularMovieVO
 import com.padcx.mmz.movietheater.delegate.PopularMovieListActionDelegate
 import com.padcx.mmz.movietheater.utils.MOVIE_PATH
+import com.padcx.mmz.shared.BaseViewHolder
 import kotlinx.android.synthetic.main.popular_films_serials_items.view.*
 
 /**

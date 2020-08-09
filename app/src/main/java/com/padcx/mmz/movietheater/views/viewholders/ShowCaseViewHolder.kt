@@ -6,6 +6,7 @@ import com.padcx.mmz.movietheater.data.vos.TopRateMovieVO
 import com.padcx.mmz.movietheater.delegate.PopularMovieListActionDelegate
 import com.padcx.mmz.movietheater.delegate.videoplaydelegate
 import com.padcx.mmz.movietheater.utils.MOVIE_PATH
+import com.padcx.mmz.shared.BaseViewHolder
 import kotlinx.android.synthetic.main.showcase_item_layout.view.*
 
 /**

@@ -41,6 +41,8 @@ class MovieItemViewPagerAdapter(
             .placeholder(R.drawable.itsokaytonotbeokay)
             .into(view.iv_movie_item)
 
+        view.nowplaying.text=mData[position].original_title
+
         view.iv_movie_item.setOnClickListener {
             delegate.onTapVideo(mData[position].id)
             Log.d("Movieplay id", "" + mData[position].id)
@@ -56,7 +58,7 @@ class MovieItemViewPagerAdapter(
     }
 
     override fun getCount(): Int {
-        return 3
+        return 5
     }
 
     fun setNewData(data: MutableList<TopRateMovieVO>){

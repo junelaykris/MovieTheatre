@@ -69,15 +69,22 @@ object MockMovieModelImpl : MoviesModel {
         return liveData
     }
 
-    override fun getAllNowPlayingList(onError: (String) -> Unit): LiveData<List<TopRateMovieVO>> {
+   /* override fun getAllNowPlayingList(onError: (String) -> Unit): LiveData<List<TopRateMovieVO>> {
         val liveData = MutableLiveData<List<TopRateMovieVO>>()
         liveData.postValue(getDummyTopRatedMovieList())
         return liveData
-    }
+    }*/
 
     override fun getVideoIdByMovieId(
         movieId: Int,
         onSuccess: (List<VideoVO>) -> Unit,
+        onError: (String) -> Unit
+    ) {
+
+    }
+
+    override fun getAllNowplayingList(
+        onSuccess: (List<TopRateMovieVO>) -> Unit,
         onError: (String) -> Unit
     ) {
 

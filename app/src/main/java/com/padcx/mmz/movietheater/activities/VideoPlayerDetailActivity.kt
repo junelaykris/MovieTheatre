@@ -9,6 +9,7 @@ import com.padcx.mmz.movietheater.data.vos.VideoVO
 import com.padcx.mmz.movietheater.mvp.presenters.VideoPresenter
 import com.padcx.mmz.movietheater.mvp.presenters.VideoPresenterImpl
 import com.padcx.mmz.movietheater.mvp.views.VideoView
+import com.padcx.mmz.shared.BaseActivity
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.android.synthetic.main.video_play_layout.*

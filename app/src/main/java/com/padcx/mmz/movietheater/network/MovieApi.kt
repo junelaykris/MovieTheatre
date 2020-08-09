@@ -34,6 +34,13 @@ interface MovieApi {
     ): Observable<TopRateMovieResponse>
 
 
+    @GET(GET_NOWPLAYING)
+    fun getNowPlayingMovies(
+        @Query("api_key") apiKey: String
+    ): Observable<TopRateMovieResponse>
+
+
+
     @GET(GET_ACTOR)
     fun getActorList(
         @Query("api_key") apiKey: String
@@ -52,10 +59,6 @@ interface MovieApi {
         @Path("movie_id") movie_id: Int,
         @Query("api_key") apiKey: String
     ): Observable<GetActorAndCreatorResponse>
-
-
-    @GET(GET_NOWPLAYING)
-    fun getNowPlayingList(@Query(PARAM_API_KEY) apiKey: String): Observable<TopRateMovieResponse>
 
 
     @GET("movie/{movie_id}/videos")

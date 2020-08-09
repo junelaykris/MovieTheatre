@@ -6,8 +6,10 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.0.1"
+        classpath "com.android.tools.build:gradle:4.0.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        classpath 'me.moallemi.gradle:advanced-build-version:1.7.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,3 +26,18 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+def verySensitiveDP=loadSensitiveData()
+
+ext{
+   // verySensitiveData=verySensitiveDP.getProperty('MY_SENSITIVE_DATA')
+    verySensitiveData=verySensitiveDP.getProperty('PARAM_API_KEY_VALUE')
+}
+
+def loadSensitiveData(){
+    Properties verysensitiveDataProperties=new Properties()
+    verysensitiveDataProperties.load(project.rootProject.file('very_sensitive_data.properties').newDataInputStream())
+    return verysensitiveDataProperties
+}
+
+apply from :'libraries.gradle'

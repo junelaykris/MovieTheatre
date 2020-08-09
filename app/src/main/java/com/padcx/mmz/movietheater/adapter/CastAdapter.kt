@@ -8,6 +8,7 @@ import com.padcx.mmz.movietheater.data.vos.CastVO
 import com.padcx.mmz.movietheater.delegate.MovieDetailDelegate
 import com.padcx.mmz.movietheater.views.viewholders.ActorViewHolder
 import com.padcx.mmz.movietheater.views.viewholders.CastViewHolder
+import com.padcx.mmz.shared.BaseRecyclerAdapter
 
 /**
  * Created by Myint Myint Zaw on 8/2/2020.
